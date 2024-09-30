@@ -4,24 +4,24 @@
 
 JDHR是一个基于Jittor国产深度学习框架的动态人体渲染算法库。该算法库全面集成了动态人体渲染的关键技术，包括点云采样、4D特征网格表示以及实时渲染等多个关键模块。
 
-JDHR(Jittor Dynaminc Human Rendering), is a dynamic human rendering algorithm library based on Jittor. This algorithm library fully integrates key technologies, including point cloud sampling, 4D feature mesh representation and real-time rendering.
+JDHR (Jittor-based Dynamic Human Rendering) is a dynamic human rendering algorithm library based on Jittor. This algorithm library fully integrates key technologies, including point cloud sampling, 4D feature grid representation, and real-time rendering.
 
 ## Plan (开源计划)
 - [x] **Release training code**
-- [ ] **Release realtime rendering code**
+- [ ] **Release High frame rate(HFR) rendering code**
 - [ ] **Release initializing point clouds code**
 - [ ] **Build a  WebSocket-based viewer**
 
 ## Installation（安装）
 
-Install basic enironment under JDHR repo:
+Install the basic environment under the JDHR repo:
 
 ```shell
 # Editable install, with dependencies from requirements.txt
 pip install -v -e . 
 ```
 
-Install Rasterizater for realtime rendering:
+Install Rasterizer for realtime rendering:
 
 ```shell
 cd easyvolcap/diff_point_rasterizater
@@ -35,7 +35,6 @@ make -j4
 ### DNA-Rendering Datasets
 
 Please refer to [HumanRF](https://github.com/synthesiaresearch/humanrf) to download DNA-Rendering datasets.
-Also, you can email me at [23120464@bjtu.edu.cn](mailto://23120464@bjtu.edu.cn) to request the processed datasets.
 Note that you should cite the corresponding papers if you use these datasets.
 
 ### :clock3: more datasets
@@ -54,19 +53,22 @@ The actual training of the full model is more straight forward:
 evc-train -c configs/exps/4k4d/4k4d_0013_09_r4.yaml
 ```
 
-## :clock3:Rendering（渲染）
+During the validation phase, rendering frame rate should be greater than 30 FPS
+
+## :clock3:HFR Rendering（高帧率渲染）
 
 ## Team （团队）
 
-JDHR, as a sub-project under Tsinghua University [Jittor project](http://cg.cs.tsinghua.edu.cn/jittor/), is its strategic layout and expansion in the field of dynamic human rendering.It is an open-source code repository jointly maintained by teams from Tsinghua University and Beijing Jiaotong University
+动态人体渲染算法库（JDHR）是由清华大学和北京交通大学团队共同维护的开源代码库。欢迎大家使用JDHR开展研究工作。
 
-Feel free to request support for new models and contribute to JAD.
+JDHR is an open-source code repository jointly maintained by teams from Tsinghua University and Beijing Jiaotong University
 
-动态人体渲染算法库（JDHR）作为清华大学Jittor官方项目在三维虚拟数字人内容制作领域的布局和扩展，是由清华大学和北京交通大学团队共同维护的开源代码库。欢迎大家使用JDHR开展研究工作。
+Feel free to request support for new models and contribute to JDHR.
+
 
 ## Acknowledgement (鸣谢)
 1. [Jittor](https://github.com/Jittor/jittor)
-2. [4K4D](https://github.com/zju3dv/4K4D)
-3. [JNeRF](https://github.com/Jittor/JNeRF)
+2. [JNeRF](https://github.com/Jittor/JNeRF)
+3. [EasyVolcap](https://github.com/zju3dv/EasyVolcap)
 4. [3DGS](https://github.com/graphdeco-inria/gaussian-splatting)
 
